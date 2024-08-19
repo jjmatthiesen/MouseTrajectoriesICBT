@@ -1,0 +1,12 @@
+.idea/
+venv/
+__pycache__/
+data/mouse_data/participants/*
+data/mouse_data/raw/*
+data/features/*
+data/mouse_data/*.csv
+data/preprocessed/*.csv
+export/models/*
+data/*.csv
+export/logger/*
+export/logging/*
