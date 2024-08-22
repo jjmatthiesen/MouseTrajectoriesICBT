@@ -2,7 +2,7 @@
 
 *Authors will be added after blind review.*
 
-## Mouse Trajectories in ICBT
+## Mouse Trajectories in Digital Mental Health Interventions
 This repository provides the code to the paper.
 We introduce the novel data type of mouse trajectories within the context of Digital Mental Health Interventions (DMHIs).
 The paper discusses how to gather and process mouse trajectory data on questionnaires in DMHIs.
