@@ -4,7 +4,7 @@
 
 ## Mouse Trajectories in ICBT
 This repository provides the code to the paper.
-We introduce the novel data type of mouse trajectories within the context of Internet-based Cognitive Behavioral Therapy (ICBT).
+We introduce the novel data type of mouse trajectories within the context of Digital Mental Health Interventions (DMHIs).
 The paper discusses how to gather and process mouse trajectory data on questionnaires in DMHIs.
 
 
@@ -14,19 +14,32 @@ The paper discusses how to gather and process mouse trajectory data on questionn
 #### 🗎 [cnn1d.py](./models/cnn1d.py)
 Contains the architecture for a 1D Convolutional Neural Network (1D-CNN).
 
-#### 🗎 [cnn1d.py](./models/cnn1d_antal_feher.py)
+#### 🗎 [cnn1d_antal_feher.py](./models/cnn1d_antal_feher.py)
 Implements the architecture for a 1D-CNN, as used in [Antal et al.(2020)](https://ieeexplore.ieee.org/document/9465583).
 
-#### 🗎 [cnn1d.py](./models/cnn1d_encode.py)
+#### 🗎 [cnn1d_encode.py](./models/cnn1d_encode.py)
 Implements a 1D-CNN architecture similar to the encoder part of an autoencoder.
+
+#### 🗎 [nonseq_models.py](./models/nonseq_models.py)
+Utility class for non-sequential scikit-learn models.
 
 ### 🗀 src
 #### 🗎 [aggregated_learning.py](src/aggregated_learning.py)
 Runs the deep learning experiment using different hyperparameter setting and models.
 
+#### 🗎 [train_nonseq_models.py](src/train_nonseq_models.py)
+Runs the non-sequential experiment using different hyperparameter settings for baseline, 10 and 3 mouse features.
+
 ### 🗀 scr/pre_processing
+
+#### 🗎 [preprocess_outcomes.py](./src/pre_processing/preprocess_outcomes.py)
+Very specific to this project as highly dependent on the data structure from the studies system. Returns DataFrame with
+- Only the patients that filled out the baseline questionnaire within a specific time frame
+- Includes dropout_mod = outcome variable
+- Includes all baseline features
+
 #### 🗎 [mouse_features.py](./src/pre_processing/mouse_features.py)
-Takes the raw mouse trajectory from a given b y the [tracker](https://github.com/jjmatthiesen/evtrack/tree/setup_karolinskaInstitutet) and creates features such as:
+Takes the raw mouse trajectory from the [tracker](https://github.com/jjmatthiesen/evtrack/tree/setup_karolinskaInstitutet) and creates features such as:
 - jitter, jitter2 (see appendix for mathematical definition)
 - x_min_max_diff, y_min_max_diff
 - percentage of screen usage (total, x and y)
@@ -68,6 +81,9 @@ Selects certain features from the whole feature list created with [mouse_feature
     - number_dp, 
     - pauses_no, 
     - scroll_speed_mean
+
+#### 🗎 [pre_process_nonseq.py](./src/pre_processing/pre_process_nonseq.py)
+Pulls non-sequential features incl. imputing missing MADRS-S values
 
 ### 🗀 scr/utils
 #### 🗎 [data.py](./src/utils/data.py)
