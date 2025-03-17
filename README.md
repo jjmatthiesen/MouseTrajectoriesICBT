@@ -111,6 +111,9 @@ Contains functions for training and testing of the neural networks.
 #### 🗎 [utils.py](./src/utils/utils.py)
 Provides smaller utility functions, such as a logger, metric collector, and Euclidean distance calculation. 
 
+#### 🗎 [bias_ttests.py](./src/pre_processing/bias_ttests.py)
+Code that compares the means of the two groups (mouse and touch device users) with Student's t-tests
+
 ---
 ## Setup
 Install the packages from requirements.txt
@@ -126,5 +129,5 @@ To run the code, follow these steps:
 4. Run [pre_process_files.py](src/pre_processing/pre_process_files.py).
 5. Generate mouse features with [mouse_features.py](src/pre_processing/mouse_features.py).
 6. Select features with [select_features.py](src/pre_processing/select_features.py).
-7. run experiments with [aggregated_learning.py](src/aggregated_learning.py)
+7. run experiments with [aggregated_learning.py](src/aggregated_learning.py) and [train_nonseq_models.py](src/train_nonseq_models.py)
 
